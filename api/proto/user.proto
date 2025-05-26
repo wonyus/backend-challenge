@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/wonyus/backend-challenge/api/proto";
+
+import "google/api/annotations.proto";
+
+service UserService {
+  rpc CreateUser(CreateUserRequest) returns (UserResponse) {
+    option (google.api.http) = {
+      post: "/v1/users"
+      body: "*"
+    };
+  }
+  rpc GetUser(GetUserRequest) returns (UserResponse) {
+    option (google.api.http) = {
+      get: "/v1/users/{id}"
+    };
+  }
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {
+    option (google.api.http) = {
+      get: "/v1/users"
+    };
+  }
+  rpc UpdateUser(UpdateUserRequest) returns (UserResponse) {
+    option (google.api.http) = {
+      put: "/v1/users/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {
+    option (google.api.http) = {
+      delete: "/v1/users/{id}"
+    };
+  }
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message GetUserRequest {
+  string id = 1;
+}
+
+message ListUsersRequest {
+  int32 page = 1;
+  int32 limit = 2;
+}
+
+message UpdateUserRequest {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+}
+
+message DeleteUserRequest {
+  string id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string created_at = 4;
+}
+
+message ListUsersResponse {
+  repeated UserResponse users = 1;
+  int32 total = 2;
+}
+
+message DeleteUserResponse {
+  bool success = 1;
+} 
