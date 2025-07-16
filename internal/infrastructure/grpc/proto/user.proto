@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user;
 
-option go_package = "github.com/wonyus/backend-challenge/internal/infrastructure/grpc/proto";
+option go_package = "internal/infrastructure/grpc/proto";
 
 service UserService {
   rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);

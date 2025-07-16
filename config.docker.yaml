@@ -1,0 +1,5 @@
+mongoUri: "mongodb://admin:password@mongodb:27017"
+databaseName: "backend_challenge"
+jwtSecret: "RG62wY6JKwF29Z3dW1oWU/ZX4jYcFDmBdQnKA/X8FBQ="
+httpPort: 8080
+grpcPort: 9090

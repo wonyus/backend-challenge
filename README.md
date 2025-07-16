@@ -20,44 +20,44 @@ Each user should have:
 ### 2. Authentication
 
 #### Functions
-- Register a new user.
-- Authenticate user and return a JWT.
+[x] Register a new user.
+[x] Authenticate user and return a JWT.
 
 #### JWT
-- Use JWT for protecting endpoints.
-- Use middleware to validate tokens.
-- Use HMAC (HS256) with a secret key.
+[x] Use JWT for protecting endpoints.
+[x] Use middleware to validate tokens.
+[x] Use HMAC (HS256) with a secret key.
 
 ---
 
 ### 3. User Functions
 
-- Create a new user.
-- Fetch user by ID.
-- List all users.
-- Update a user's name or email.
-- Delete a user.
+[x] Create a new user.
+[x] Fetch user by ID.
+[x] List all users.
+[x] Update a user's name or email.
+[x] Delete a user.
 
 ---
 
 ### 4. MongoDB Integration
-- Use the official Go MongoDB driver.
-- Store and retrieve users from MongoDB.
+[x] Use the official Go MongoDB driver.
+[x] Store and retrieve users from MongoDB.
 
 ---
 
 ### 5. Middleware
-- Logging middleware that logs HTTP method, path, and execution time.
+[x] Logging middleware that logs HTTP method, path, and execution time.
 
 ---
 
 ### 6. Concurrency Task
-- Run a background goroutine every 10 seconds that logs the number of users in the DB.
+[x] Run a background goroutine every 10 seconds that logs the number of users in the DB.
 
 ---
 
 ### 7. Testing
-Write unit tests
+[x] Write unit tests
 
 Use Go’s `testing` package. Mock MongoDB where possible.
 
@@ -65,19 +65,19 @@ Use Go’s `testing` package. Mock MongoDB where possible.
 
 ## Bonus (Optional)
 
-- Add Docker + `docker-compose` for API + MongoDB.
-- Use Go interfaces to abstract MongoDB operations for testability.
-- Add input validation (e.g., required fields, valid email).
-- Implement graceful shutdown using `context.Context`.
+[x] Add Docker + `docker-compose` for API + MongoDB.
+[x] Use Go interfaces to abstract MongoDB operations for testability.
+[x] Add input validation (e.g., required fields, valid email).
+[x] Implement graceful shutdown using `context.Context`.
 - **gRPC Version**
-  - Create a `.proto` file for `CreateUser` and `GetUser`.
-  - Implement a gRPC server.
+  [x] Create a `.proto` file for `CreateUser` and `GetUser`.
+  [x] Implement a gRPC server.
   - (Optional) Secure gRPC with token metadata.
 - **Hexagonal Architecture**
   - Structure the project using hexagonal (ports & adapters) architecture:
-    - Separate domain, application, and infrastructure layers.
-    - Use interfaces for data access and external dependencies.
-    - Keep business logic decoupled from frameworks and DB drivers.
+    [x] Separate domain, application, and infrastructure layers.
+    [x] Use interfaces for data access and external dependencies.
+    [x] Keep business logic decoupled from frameworks and DB drivers.
 
 ---
 
@@ -101,3 +101,6 @@ Use Go’s `testing` package. Mock MongoDB where possible.
 - Bonus: gRPC, Docker, validation, shutdown
 - Testing coverage and mocking
 - Use of idiomatic Go
+
+## How to run
+- [HOWTORUN.md](./HOWTORUN.md)
